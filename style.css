@@ -1,0 +1,100 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(15,23,42,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#eef2ff 0%, #f8fafc 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  color:#0f172a;
+}
+
+.app{width:100%;max-width:760px}
+
+/* Card */
+.quiz-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.hidden{display:none}
+
+/* Header */
+.quiz-header{display:flex;flex-direction:column;gap:8px}
+.title{margin:0;font-size:1.25rem}
+.progress-wrap{
+  background:#e6e9f8;
+  height:8px;
+  border-radius:999px;
+  overflow:hidden;
+  width:100%;
+}
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#7c3aed);
+  width:0%;
+  transition:width 300ms ease;
+}
+.progress-text{font-size:0.9rem;color:var(--muted);align-self:flex-end}
+
+/* Question */
+.question-area{display:flex;flex-direction:column;gap:12px}
+.question{margin:0;font-weight:600}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.option-btn{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #e6e9f8;
+  background:transparent;
+  cursor:pointer;
+  text-align:left;
+  transition:transform 120ms ease, box-shadow 120ms ease;
+}
+.option-btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.option-btn[aria-pressed="true"]{outline:3px solid rgba(79,70,229,0.12)}
+
+/* Footer */
+.quiz-footer{display:flex;justify-content:flex-end}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+/* Result card */
+.result-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-top:16px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+/* Responsive */
+@media (max-width:520px){
+  .options{grid-template-columns:1fr}
+  .quiz-card{padding:16px}
+}

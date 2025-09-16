@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="quiz-card" id="quiz">
+      <header class="quiz-header">
+        <h1 class="title">Technical Assesment Quize</h1>
+        <div class="progress-wrap" aria-hidden="true">
+          <div id="progress" class="progress-bar" style="width:0%"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0 / 0</div>
+      </header>
+
+      <section class="question-area">
+        <p id="question" class="question">Loading question...</p>
+        <div class="options" id="options">
+          <!-- Option buttons will be injected here -->
+        </div>
+      </section>
+
+      <footer class="quiz-footer">
+        <button id="nextBtn" class="btn" disabled>Next</button>
+      </footer>
+    </div>
+
+    <div class="result-card hidden" id="result">
+      <h2>Your Score</h2>
+      <p id="scoreText"></p>
+      <button id="retryBtn" class="btn">Retry</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
